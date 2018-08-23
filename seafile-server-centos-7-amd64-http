@@ -133,6 +133,18 @@ fi
 if [[ -d "/opt/seafile/" ]] ;
 then
   echo "  Aborting because directory /opt/seafile/ already exist" ; exit 1
+fi
+
+# -------------------------------------------
+# Setup permissive selinux
+# -------------------------------------------
+# runtime
+# enforce=`getenforce`
+# if [[ "${enforce}" != "Disabled" ]]; then
+#     setenforce 0
+# fi
+# permanently
+# sed -i 's/^SELINUX=.*/SELINUX=permissive/' /etc/selinux/config
 
 # -------------------------------------------
 # Setup firewall
